@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings — FlyRank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">✦</span>
+        <span class="brand-name">FlyRank</span>
+      </div>
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">Dashboard</a>
+        <a href="#" class="nav-item">Analytics</a>
+        <a href="#" class="nav-item active">Settings</a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <header class="page-header">
+        <div>
+          <h1>Settings</h1>
+          <p class="subtitle">Manage your account preferences and application settings.</p>
+        </div>
+      </header>
+
+      <form id="settings-form" class="settings-form" novalidate>
+        <!-- Profile -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Profile</h2>
+            <p>Your personal information and public profile.</p>
+          </div>
+          <div class="section-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="display-name">Display name</label>
+                <input type="text" id="display-name" name="displayName" placeholder="Jane Doe" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="email">Email address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" autocomplete="email">
+              </div>
+            </div>
+            <div class="field">
+              <label for="bio">Bio</label>
+              <textarea id="bio" name="bio" rows="3" placeholder="Tell us a little about yourself…"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- Notifications -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Notifications</h2>
+            <p>Choose how and when you want to be notified.</p>
+          </div>
+          <div class="section-body">
+            <div class="toggle-list">
+              <label class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Email notifications</span>
+                  <span class="toggle-desc">Receive updates and alerts via email.</span>
+                </div>
+                <input type="checkbox" name="emailNotifications" class="toggle-input">
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Weekly digest</span>
+                  <span class="toggle-desc">A summary of your activity every Monday.</span>
+                </div>
+                <input type="checkbox" name="weeklyDigest" class="toggle-input">
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Marketing emails</span>
+                  <span class="toggle-desc">Product news, tips, and feature announcements.</span>
+                </div>
+                <input type="checkbox" name="marketingEmails" class="toggle-input">
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Appearance -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Appearance</h2>
+            <p>Customize how the app looks and feels.</p>
+          </div>
+          <div class="section-body">
+            <div class="field-row">
+              <div class="field">
+                <label for="theme">Theme</label>
+                <select id="theme" name="theme">
+                  <option value="system">System default</option>
+                  <option value="light">Light</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="language">Language</label>
+                <select id="language" name="language">
+                  <option value="en">English</option>
+                  <option value="es">Español</option>
+                  <option value="fr">Français</option>
+                  <option value="de">Deutsch</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="timezone">Timezone</label>
+              <select id="timezone" name="timezone">
+                <option value="UTC">UTC</option>
+                <option value="America/New_York">Eastern Time (ET)</option>
+                <option value="America/Chicago">Central Time (CT)</option>
+                <option value="America/Denver">Mountain Time (MT)</option>
+                <option value="America/Los_Angeles">Pacific Time (PT)</option>
+                <option value="Asia/Karachi">Pakistan Standard Time (PKT)</option>
+              </select>
+            </div>
+          </div>
+        </section>
+
+        <!-- Privacy -->
+        <section class="settings-section">
+          <div class="section-header">
+            <h2>Privacy</h2>
+            <p>Control your data and visibility.</p>
+          </div>
+          <div class="section-body">
+            <div class="toggle-list">
+              <label class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Public profile</span>
+                  <span class="toggle-desc">Allow others to view your profile page.</span>
+                </div>
+                <input type="checkbox" name="publicProfile" class="toggle-input">
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+              <label class="toggle-item">
+                <div class="toggle-info">
+                  <span class="toggle-label">Show activity status</span>
+                  <span class="toggle-desc">Let others see when you're online.</span>
+                </div>
+                <input type="checkbox" name="showActivity" class="toggle-input">
+                <span class="toggle-switch" aria-hidden="true"></span>
+              </label>
+            </div>
+          </div>
+        </section>
+
+        <!-- Danger zone -->
+        <section class="settings-section danger">
+          <div class="section-header">
+            <h2>Danger zone</h2>
+            <p>Irreversible actions — proceed with caution.</p>
+          </div>
+          <div class="section-body">
+            <div class="danger-actions">
+              <div class="danger-item">
+                <div>
+                  <span class="danger-label">Reset all settings</span>
+                  <span class="danger-desc">Restore defaults for every preference.</span>
+                </div>
+                <button type="button" id="reset-btn" class="btn btn-outline-danger">Reset</button>
+              </div>
+              <div class="danger-item">
+                <div>
+                  <span class="danger-label">Delete account</span>
+                  <span class="danger-desc">Permanently remove your account and all data.</span>
+                </div>
+                <button type="button" id="delete-btn" class="btn btn-danger">Delete account</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="form-footer">
+          <p id="status-message" class="status-message" role="status" aria-live="polite"></p>
+          <div class="form-actions">
+            <button type="button" id="cancel-btn" class="btn btn-secondary">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+        </footer>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
